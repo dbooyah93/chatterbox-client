@@ -4,6 +4,14 @@ var FormView = {
 
   initialize: function() {
     FormView.$form.on('submit', FormView.handleSubmit);
+
+    $('.refresher').click(function() {
+      MessagesView.$chats.html('');
+      MessagesView.initialize();
+    });
+
+
+
   },
 
   handleSubmit: function(event) {
@@ -11,9 +19,9 @@ var FormView = {
     event.preventDefault();
     let inputstring = $('input#message').val();
     var message = {
-      username: 'unknown',
+      username: $('#usernameinput').val(),
       text: inputstring,
-      roomname: 'unknown'
+      roomname: RoomsView.$select.val()
     };
 
     $.ajax({
@@ -32,7 +40,11 @@ var FormView = {
         // See: https://developer.mozilla.org/en-US/docs/Web/API/console.error
         console.error('chatterbox: Failed to send message', data);
       }
-    }); $(this).on()
+    });
+
+    $(this).on();
+
+    MessagesView.$chats.prepend(MessageView.render(message));
 
     // $(this)
   },

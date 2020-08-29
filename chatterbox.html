@@ -21,25 +21,40 @@
       }
     </script>
   </head>
-  <body>
-    <div id="main">
-      <h1>chatterbox</h1>
-      <div class="spinner"><img src="client/images/spiffygif_46x46.gif"></div>
-      <div id="rooms">
-        Room:
-        <select></select>
-        <button>Add Room</button>
+    <body>
+      <grid class="friends">
+        <button class="newFriends">CLICK TO REMOVE OLD FRIENDS AND GET NEW</button>
+      </grid>
+      <grid class="roomies"></grid>
+      <div class="topbox" id="main">
+        <h1>chatterbox</h1>
+        <div class="usersname">
+          Username:
+          <input type="text" id="usernameinput"/>
+        </div>
+        <div class="spinner"><img src="client/images/spiffygif_46x46.gif"></div>
+        <div id="rooms">
+          Room:
+          <select></select>
+          <input type="text" id="roominput"/>
+          <button id="addroom">Add Room</button>
+        </div>
+        <form action="#" id="send" method="post">
+          <input type="text" name="message" id="message"/>
+          <input type="submit" name="submit" class="submit"/>
+        </form>
+        <div>
+          <button class="refresher">Refresh the messages below</button>
+        </div>
+
       </div>
-      <form action="#" id="send" method="post">
-        <input type="text" name="message" id="message"/>
-        <input type="submit" name="submit" class="submit"/>
-      </form>
-    </div>
+    </body>
     <div id="chats"></div>
     <script src="client/env/config.js"></script>
+    <script src="client/scripts/friends.js"></script>
+    <script src="client/scripts/friendsView.js"></script>
     <script src="client/scripts/parse.js"></script>
     <script src="client/scripts/rooms.js"></script>
-    <script src="client/scripts/friends.js"></script>
     <script src="client/scripts/messages.js"></script>
     <script src="client/scripts/formView.js"></script>
     <script src="client/scripts/roomsView.js"></script>
@@ -49,5 +64,4 @@
     <script>
       $("body").ready(() => App.initialize());
     </script>
-  </body>
 </html>
