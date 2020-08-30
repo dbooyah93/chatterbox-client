@@ -15,7 +15,6 @@ var App = {
     // Fetch initial batch of messages
     App.startSpinner();
     App.fetch(App.stopSpinner);
-
   },
 
   fetch: function(callback = ()=>{}) {
@@ -24,6 +23,7 @@ var App = {
       console.log(data);
 
       callback();
+
     });
   },
 

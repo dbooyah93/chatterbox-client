@@ -1,9 +1,15 @@
 var Messages = {
   render: _.template(`  {
-    "username": "<%= username %>",
-    "text": "<%= text %>",
-    "roomname": "<%= roomname %>"
+    "username": "<%- username %>",
+    "text": "<%- text %>",
+    "roomname": "<%- roomname %>"
   }`),
 
-  data: []
+  data: [],
+
+  update: function(messages) {
+    for (let message of messages) {
+      data.push(message);
+    }
+  }
 };

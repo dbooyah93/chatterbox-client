@@ -23,7 +23,6 @@
   </head>
     <body>
       <grid class="friends">
-        <button class="newFriends">CLICK TO REMOVE OLD FRIENDS AND GET NEW</button>
       </grid>
       <grid class="roomies"></grid>
       <div class="topbox" id="main">
@@ -35,7 +34,7 @@
         <div class="spinner"><img src="client/images/spiffygif_46x46.gif"></div>
         <div id="rooms">
           Room:
-          <select></select>
+          <select class="roomselector"></select>
           <input type="text" id="roominput"/>
           <button id="addroom">Add Room</button>
         </div>
@@ -63,5 +62,11 @@
     <script src="client/scripts/app.js"></script>
     <script>
       $("body").ready(() => App.initialize());
-    </script>
+
+      $('body').on('click', '.friend', function(){
+
+        let name = $(this)[0].textContent;
+        $(`.username:contains(${name})`).toggleClass('colorChange')});
+
+</script>
 </html>

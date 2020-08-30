@@ -10,7 +10,11 @@ var FormView = {
       MessagesView.initialize();
     });
 
-
+    $('button.friend').click(function(event) {
+      debugger;
+      event.preventDefault();
+      console.log('AAAAAAAAAAAAAAAAA');
+    });
 
   },
 
@@ -40,9 +44,7 @@ var FormView = {
         // See: https://developer.mozilla.org/en-US/docs/Web/API/console.error
         console.error('chatterbox: Failed to send message', data);
       }
-    });
-
-    $(this).on();
+    }); $(this).on();
 
     MessagesView.$chats.prepend(MessageView.render(message));
 

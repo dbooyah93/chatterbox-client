@@ -121,6 +121,8 @@ form input[type=text] {
     display: block;
     background: linear-gradient(0deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
     margin-top: 1em;
+    margin-left: auto;
+    margin-right: auto;
     border-radius: 1em;
     border: 1px solid lightgreen;
 }
@@ -131,6 +133,13 @@ form input[type=text] {
     background-color: cornflowerblue;
 }
 
-.newFriends {
+.roomselector {
+    /* grid-column: 1; */
+    width: 20%;
+    margin-top: 10px;
+    margin-left: 30px;
+}
 
+.colorChange {
+    color: green;
 }

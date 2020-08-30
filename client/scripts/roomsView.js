@@ -48,5 +48,5 @@ var RoomsView = {
   },
 
   render: _.template(
-    '<option value="<%= roomname %>"><%= roomname %></option>')
+    '<option value="<%- roomname %>"><%- roomname %></option>')
 };

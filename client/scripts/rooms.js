@@ -1,6 +1,6 @@
 var Rooms = {
 
-  render: _.template(`<%= roomname %>`),
+  render: _.template(`<%- roomname %>`),
 
   data: {}
 };

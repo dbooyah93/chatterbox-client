@@ -6,10 +6,9 @@ var FriendsView = {
     Parse.readAll((data) => {
       for (let item of data.results) {
         // let item = JSON.parse(it);
-
-        item.text = MessagesView.encode(item.text);
-        item.username = MessagesView.encode(item.text);
-        item.roomname = MessagesView.encode(item.roomname);
+        // item.text = MessagesView.encode(item.text);
+        // item.username = MessagesView.encode(item.text);
+        // item.roomname = MessagesView.encode(item.roomname);
         if (item.username && item.text) {
           if (Friends.data[item.username] === undefined ) {
             Friends.data[item.username] = [item];
@@ -25,10 +24,11 @@ var FriendsView = {
         }
       }
     });
+
   },
 
   render: _.template(
-    '<div class="friend"><%= username %></div>'),
+    '<div class="friend"><%- username %></div>'),
 
   handleButton: function(event) {
     event.preventDefault();
